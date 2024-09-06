@@ -1,9 +1,9 @@
 /* Location: assets/css/form.css */
 
-/* Basic styles for the form */
 form {
-    max-width: 600px;
+    max-width: 500px;
     margin: 0 auto;
+    background-color: #ccc;
 }
 
 .form-group {
