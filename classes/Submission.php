@@ -16,7 +16,6 @@ class Submission {
 
         $stmt = mysqli_prepare($this->conn, $query);
 
-        // Bind parameters: s = string, i = integer
         mysqli_stmt_bind_param($stmt, 'issssssssi', 
                                $data['amount'], 
                                $data['buyer'], 

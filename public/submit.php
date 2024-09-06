@@ -8,7 +8,6 @@ require_once '../classes/Submission.php';
 $submission = new Submission($db);
 $validator = new Validator();
 
-// Retrieve form data
 $data = [
     'amount' => $_POST['amount'],
     'buyer' => $_POST['buyer'],
@@ -22,18 +21,27 @@ $data = [
     'entry_by' => $_POST['entry_by']
 ];
 
-// Perform validation
 $errors = $validator->validate($data);
 
 if (count($errors) > 0) {
-    foreach ($errors as $error) {
-        echo "<p>$error</p>";
-    }
+    $errorMessages = implode("\n", $errors);
+    echo '<script>
+        alert("Submission failed!\\n' . addslashes($errorMessages) . '");
+        window.location.href = "../views/form.php";
+    </script>';
 } else {
     if ($submission->create($data)) {
-        echo "Submission successful!";
+        // echo "Submission successful!";
+        echo '<script>
+                alert("Submission successful!");
+                window.location.href = "../public/index.php";
+            </script>';
     } else {
-        echo "Submission failed!";
+        // echo "Submission failed!";
+        echo '<script>
+            alert("Submission failed!");
+            window.location.href = "../views/form.php";
+        </script>';
     }
 }
 ?>

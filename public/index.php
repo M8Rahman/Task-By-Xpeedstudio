@@ -1,3 +1,5 @@
+<!-- Location: public/index.php -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +22,7 @@
     </div>
 
    
-    <script src="../assets/js/indexBackground.js"></script>
+    <script src="../assets/js/particleBackground.js"></script>
     <script type="text/javascript">
         document.getElementById("form").onclick = function () {
             location.href = "../views/form.php";

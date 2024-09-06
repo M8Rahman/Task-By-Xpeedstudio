@@ -1,160 +1,113 @@
-/* Same background and layout as index */
-body,
-html {
+* {
     margin: 0;
     padding: 0;
-    height: 100%;
-    overflow: hidden;
+    box-sizing: border-box;
 }
 
-#particles-js {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-color: #000;
-    text-align: center;
-}
-
-.content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    background: rgba(0, 0, 0, 0.7);
-    padding: 40px;
-    border-radius: 10px;
-    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.5);
-}
-
-.heading {
-    font-size: 48px;
-    font-weight: bold;
-    text-transform: uppercase;
+body {
+    font-family: Arial, sans-serif;
+    background: url('../assets/images/particle-bg.jpg') no-repeat center center fixed;
+    background-size: cover;
     color: #fff;
-    animation: rgbLight 3s infinite alternate;
-    margin-bottom: 30px;
+    height: 100%;
+    min-height: 100%;
 }
 
-.form-group {
-    margin-bottom: 30px;
-}
-
-label {
-    font-size: 18px;
-    color: #fff;
-    margin-right: 10px;
-}
-
-input {
-    padding: 10px;
-    border: none;
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.8);
     border-radius: 8px;
-    font-size: 16px;
-    background-color: rgba(255, 255, 255, 0.178);
-    color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    overflow-x: auto;
 }
 
-.styled-table {
-    margin: 0 auto;
-    border-collapse: collapse;
-    font-size: 18px;
-    min-width: 800px;
-}
-
-.styled-table thead tr {
-    background-color: whitesmoke;
-    color: #000;
+h1,
+h2 {
     text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: #ffffff;
 }
 
-.styled-table th {
-    padding: 12px 15px;
-    color: #000;
+.search-form {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
 }
 
-.styled-table td {
-    padding: 12px 15px;
-    color: #fff;
+.search-form input[type="number"] {
+    padding: 6px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 14px;
+    width: 200px;
+    height: 35px;
 }
 
-.styled-table tbody tr:nth-of-type(even) {
-    background-color: rgba(255, 255, 255, 0.192);
-}
-
-.styled-table tbody tr:hover {
-    background-color: rgba(241, 89, 89, 0.37);
-
-}
-
-.btn {
-    padding: 10px 35px;
+.search-btn {
+    padding: 6px 12px;
+    background-color: #28a745;
     border: none;
-    outline: none;
-    color: #fff;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    height: 35px;
     cursor: pointer;
-    position: relative;
-    z-index: 0;
-    border-radius: 12px;
-    font-size: 12px;
 }
 
-.btn::after {
-    content: "";
-    z-index: -1;
-    position: absolute;
+.search-btn:hover {
+    background-color: #218838;
+}
+
+.report-table {
     width: 100%;
-    height: 100%;
-    background-color: blue;
-    left: 0;
-    top: 0;
-    border-radius: 10px;
+    border-collapse: collapse;
+    color: #ffffff;
+    table-layout: fixed;
+    font-size: 14px;
 }
 
-.btn::before {
-    content: "";
-    background: linear-gradient(45deg, #39FF14, #FF5C00, #4D4DFF, #FF10F0);
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    background-size: 600%;
-    z-index: -1;
-    width: calc(100% + 4px);
-    height: calc(100% + 4px);
-    filter: blur(8px);
-    animation: glowing 20s linear infinite;
-    transition: opacity .3s ease-in-out;
-    border-radius: 10px;
-    opacity: 0;
+.report-table th,
+.report-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #dddddd;
+    word-wrap: break-word;
 }
 
-@keyframes rgbLight {
-    0% {
-        color: rgb(255, 0, 0);
+.report-table th {
+    background-color: #007bff;
+    white-space: nowrap;
+}
+
+.report-table td {
+    white-space: normal;
+}
+
+.report-table tr:nth-child(even) {
+    background-color: #444;
+}
+
+.report-table tr:hover {
+    background-color: #333;
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 100%;
     }
 
-    33% {
-        color: rgb(0, 255, 0);
+    .search-form {
+        flex-direction: column;
     }
 
-    66% {
-        color: rgb(0, 0, 255);
+    .search-form input[type="number"],
+    .search-btn {
+        width: 100%;
+        margin-bottom: 10px;
     }
-
-    100% {
-        color: rgb(255, 255, 0);
-    }
-}
-
-.btn:hover::before {
-    opacity: 1;
-}
-
-.btn:active:after {
-    background-color: transparent;
-}
-
-.btn:active {
-    color: #000;
-    font-weight: bold;
 }
