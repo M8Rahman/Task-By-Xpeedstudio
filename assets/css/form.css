@@ -1,0 +1,47 @@
+/* Location: assets/css/form.css */
+
+/* Basic styles for the form */
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group input.error,
+.form-group textarea.error {
+    border-color: red;
+}
+
+.form-group input.valid,
+.form-group textarea.valid {
+    border-color: green;
+}
+
+.form-group button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #0056b3;
+}
